@@ -1,0 +1,51 @@
+name: flutter_base
+description: A new Flutter Base project.
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  flutter_localizations:
+    sdk: flutter
+
+  # Pattern  
+  get_it: ^7.2.0
+  provider: ^6.0.1
+  flutter_bloc: ^7.3.3
+
+  # Network
+  retrofit: ^2.2.0
+
+  # common
+  equatable: ^2.0.3
+  json_serializable: ^6.0.1
+  shared_preferences: ^2.0.8
+  
+
+  # UI
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+  build_runner: ^2.1.5
+  retrofit_generator: ^2.1.0+1
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/images/
