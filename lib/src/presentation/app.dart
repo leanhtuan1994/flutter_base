@@ -32,12 +32,12 @@ class Application extends StatelessWidget {
           return MaterialApp(
               restorationScopeId: 'app',
               localizationsDelegates: const [
-                AppLocalizations.delegate,
+                S.delegate,
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              supportedLocales: AppLocalizations.supportedLocales,
+              supportedLocales: S.supportedLocales,
               locale: Locale(state.language),
               theme: ThemeData(),
               darkTheme: ThemeData.dark(),
