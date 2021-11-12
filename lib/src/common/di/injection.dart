@@ -1,4 +1,3 @@
-import 'package:flutter_base/src/common/network/dio_client.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -9,6 +8,8 @@ import '../../presentation/common/language/impl/language_interactor_impl.dart';
 import '../../data/datasources/local/data_manager.dart';
 import '../../data/datasources/remote/app_api.dart';
 import '../../data/repositories/app_repository.dart';
+
+import '../network/dio_client.dart';
 
 part 'modules/api_module.dart';
 part 'modules/bloc_module.dart';

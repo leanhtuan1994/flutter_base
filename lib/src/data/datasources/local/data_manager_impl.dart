@@ -19,4 +19,14 @@ class DataManagerImpl extends DataManager {
   void saveLanguage(String languageCode) {
     appPreferences.saveLanguage(languageCode);
   }
+
+  @override
+  bool isFirstOpenApp() {
+    return appPreferences.isFirstOpenApp();
+  }
+
+  @override
+  void saveFirstOpenApp() {
+    appPreferences.saveFirstOpenApp();
+  }
 }

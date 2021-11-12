@@ -21,4 +21,14 @@ class AppPreferencesImpl extends AppPreferences {
   void saveLanguage(String languageCode) {
     sharedPreferences.setString(AppPreferences.keyLanguage, languageCode);
   }
+
+  @override
+  bool isFirstOpenApp() {
+    return sharedPreferences.getBool(AppPreferences.firstOpen) ?? true;
+  }
+
+  @override
+  void saveFirstOpenApp() {
+    sharedPreferences.setBool(AppPreferences.firstOpen, false);
+  }
 }

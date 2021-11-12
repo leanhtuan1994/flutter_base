@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base/src/common/constants.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import '../common/di/injection.dart';
 import '../presentation/common/language/impl/cubit/language_cubit.dart';
 import '../presentation/features/routes.dart';
+import '../data/datasources/local/data_manager.dart';
 
 class Application extends StatelessWidget {
   const Application({
@@ -14,7 +16,16 @@ class Application extends StatelessWidget {
   }) : super(key: key);
 
   String get initialRoute {
-    return 'onboarding';
+    final DataManager dataManager = getIt.get<DataManager>();
+    final isFirstOpen = dataManager.isFirstOpenApp();
+
+    if (isFirstOpen) {
+      return RouteList.onboarding;
+    }
+
+    dataManager.saveFirstOpenApp();
+
+    return RouteList.home;
   }
 
   List<BlocProvider> _getProviders() => [
